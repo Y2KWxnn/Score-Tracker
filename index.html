@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Score Tracker</title>
+  <style>
+    body {
+        text-align: center;
+        font-family: Arial;
+        border: 10px, black;
+    }
+    .team {
+      margin: 20px;
+      border: 10px, black;;
+    }
+    button {
+        margin: 10px;
+        border: 10px, black;;
+    }
+    .score {
+      font-size: 40px;
+      margin: 20px;
+      border: 10px, black;;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Score Tracker</h1>
+
+  <div class="team">
+    <h2>Team #1</h2>
+    <div id="score1" class="score">0</div>
+    <button onclick="add(1)">+</button>
+    <button onclick="minus(1)">-</button>
+    <button onclick="reset(1)">Reset</button>
+  </div>
+
+  <div class="team">
+    <h2>Team #2</h2>
+    <div id="score2" class="score">0</div>
+    <button onclick="add(2)">+</button>
+    <button onclick="minus(2)">-</button>
+    <button onclick="reset(2)">Reset</button>
+  </div>
+
+  <script>
+    var score1 = 0;
+    var score2 = 0;
+
+    function add(team) {
+      if (team == 1) {
+        score1 = score1 + 1;
+        document.getElementById("score1").innerHTML = score1;
+      } else {
+        score2 = score2 + 1;
+        document.getElementById("score2").innerHTML = score2;
+      }
+    }
+
+    function minus(team) {
+      if (team == 1) {
+        score1 = score1 - 1;
+        document.getElementById("score1").innerHTML = score1;
+      } else {
+        score2 = score2 - 1;
+        document.getElementById("score2").innerHTML = score2;
+      }
+    }
+
+    function reset(team) {
+      if (team == 1) {
+        score1 = 0;
+        document.getElementById("score1").innerHTML = score1;
+      } else {
+        score2 = 0;
+        document.getElementById("score2").innerHTML = score2;
+      }
+    }
+  </script>
+</body>
+</html>
